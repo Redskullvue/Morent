@@ -6,27 +6,27 @@
       <h3 class="text-slate-800 font-bold mb-2">Pick-up</h3>
       <div class="flex items-center justify-between">
         <div>
-          <h4>Locations</h4>
-          <select>
-            <option>LasVegas</option>
+          <h4 class="px-1">Locations</h4>
+          <select class="form-select border-0">
+            <option>Select City</option>
           </select>
         </div>
         <div>
-          <h4>Date</h4>
-          <select>
+          <h4 class="px-1">Date</h4>
+          <select class="form-select border-0">
             <option>20/June/2023</option>
           </select>
         </div>
         <div>
-          <h4>Time</h4>
-          <select>
+          <h4 class="px-1">Time</h4>
+          <select class="form-select border-0">
             <option>19:00</option>
           </select>
         </div>
       </div>
     </div>
     <button
-      class="bg-blue-500 -my-6 z-10 w-16 h-16 md:w-40 hover:shadow-blue-600 hover:bg-blue-600 text-white flex items-center justify-center rounded-lg shadow-lg shadow-blue-500"
+      class="bg-blue-600 -my-6 z-10 w-16 h-16 md:w-40 hover:shadow-blue-700 hover:bg-blue-600 text-white flex items-center justify-center rounded-lg shadow-lg shadow-blue-500"
     >
       <i-switch />
     </button>
@@ -34,20 +34,20 @@
       <h3 class="text-slate-800 font-bold">Drop-Off</h3>
       <div class="flex items-center justify-between">
         <div>
-          <h4>Locations</h4>
-          <select>
-            <option>LasVegas</option>
+          <h4 class="px-1">Locations</h4>
+          <select class="form-select border-0">
+            <option>Select City</option>
           </select>
         </div>
         <div>
-          <h4>Date</h4>
-          <select>
+          <h4 class="px-1">Date</h4>
+          <select class="form-select border-0">
             <option>20/June/2023</option>
           </select>
         </div>
         <div>
-          <h4>Time</h4>
-          <select>
+          <h4 class="px-1">Time</h4>
+          <select class="form-select border-0">
             <option>19:00</option>
           </select>
         </div>
