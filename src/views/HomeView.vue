@@ -37,7 +37,6 @@
       </button>
     </div>
   </div>
-  <div class="col-span-12 mt-10 md:bg-white p-6"><y-footer /></div>
 </template>
 
 <script>
@@ -46,16 +45,13 @@ import yAdds from "@/components/ads.vue";
 import pickDropInfo from "@/components/pickDropInfo.vue";
 import sliderProductCard from "@/components/sliderproductcard.vue";
 import mobileProductCard from "@/components/mobileproductcard.vue";
-import YFooter from "@/components/footer.vue";
 export default {
   name: "HomeView",
-
   components: {
     yAdds,
     pickDropInfo,
     sliderProductCard,
     mobileProductCard,
-    YFooter,
   },
 };
 </script>
