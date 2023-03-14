@@ -41,6 +41,7 @@
       </h2>
       <button
         class="bg-blue-600 rounded-md py-2 px-4 text-white hover:bg-blue-700"
+        @click="goTo"
       >
         Rent Now !
       </button>
@@ -56,6 +57,14 @@ export default {
     iHeart,
     iClutch,
     iUser,
+  },
+  methods: {
+    goTo() {
+      this.$router.push({
+        name: "singleCar",
+        params: { data: "KoenigSegg" },
+      });
+    },
   },
 };
 </script>
