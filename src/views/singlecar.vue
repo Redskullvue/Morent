@@ -1,18 +1,18 @@
 <template>
   <div
-    class="flex items-center p-2 justify-center flex-col lg:grid grid-cols-12 lg:grid-rows-[400px_minmax(250px,_1fr)] gap-x-4 gap-y-4"
+    class="flex items-center p-2 justify-center flex-col lg:grid grid-cols-12 lg:grid-rows-[410px_minmax(250px,_1fr)] gap-x-4 gap-y-4"
   >
     <!-- Sider Bar Filter -->
     <div
-      class="col-span-4 hidden lg:block bg-white h-max row-span-full row-start-1"
+      class="col-span-3 hidden bg-white row-span-full rounded-2xl lg:block sticky top-0"
     >
-      Hi
+      <filter-bar />
     </div>
-    <div class="p-4 flex-col flex lg:col-span-4">
+    <div class="p-4 flex-col flex lg:col-span-5">
       <img
         src="../assets/images/Ad1.png"
         alt="Car"
-        class="rounded-xl lg:w-full lg:h-64"
+        class="rounded-xl lg:w-full lg:h-72"
       />
       <div class="flex items-center justify-between lg:justify-between mt-5">
         <img
@@ -34,14 +34,12 @@
     </div>
     <!-- Car Info -->
     <div
-      class="w-full h-full bg-white rounded-lg p-4 flex flex-col lg:col-span-4"
+      class="w-full h-full bg-white rounded-lg p-10 flex flex-col lg:col-span-4"
     >
       <!-- Mobile Header -->
       <div>
         <h2 class="font-bold lg:text-lg">Nissan GT-R</h2>
-        <p class="text-xs lg:text-md font-semibold text-gray-400">
-          +440 Review
-        </p>
+        <p class="text-xs lg:text-md font-semibold text-gray-400">+10 Review</p>
       </div>
       <!-- Car Description -->
       <div class="mt-4 lg:mt-8">
@@ -51,7 +49,7 @@
         </p>
       </div>
       <div class="mt-6 flex-col flex lg:mt-10">
-        <div class="flex items-center justify-between lg:justify-around">
+        <div class="flex items-center justify-between">
           <h4 class="text-gray-400 text-md font-semibold">
             Type Car : <span class="text-black text-sm">Sport</span>
           </h4>
@@ -59,21 +57,21 @@
             Capacity : <span class="text-black text-sm">2 Person</span>
           </h4>
         </div>
-        <div class="flex items-center justify-between mt-2 lg:justify-around">
+        <div class="flex items-center justify-between mt-2">
           <h4 class="text-gray-400 text-md font-semibold">
             Gasoline : <span class="text-black text-sm">70 L</span>
           </h4>
           <h4 class="text-gray-400 text-md font-semibold">
-            Steering : <span class="text-black text-sm"> Manual</span>
+            Shifter : <span class="text-black text-sm"> Manual</span>
           </h4>
         </div>
       </div>
-      <div class="flex items-center justify-around mt-8 lg:mt-10">
+      <div class="flex items-center justify-between mt-8 lg:mt-10">
         <h2 class="font-bold text-black">
           $99.00 / <span class="font-semibold text-gray-500 font-sm">day</span>
         </h2>
         <button
-          class="bg-blue-600 rounded-md py-4 px-6 text-lg text-white hover:bg-blue-700"
+          class="bg-blue-600 rounded-md py-3 px-5 text-lg text-white hover:bg-blue-700"
           @click="goTo"
         >
           Rent Now !
@@ -81,7 +79,7 @@
       </div>
     </div>
     <div
-      class="w-full h-80 bg-white rounded-lg p-4 mt-5 flex flex-col lg:col-span-8 overflow-y-scroll"
+      class="w-full h-80 bg-white rounded-lg p-4 mt-5 flex flex-col col-span-8 col-start-4 col-end-13 overflow-y-scroll"
     >
       <h1 class="font-bold text-lg">
         Reviews
@@ -110,25 +108,29 @@
       </div>
     </div>
     <div
-      class="px-2 text-start mt-4 flex items-center justify-between w-full col-span-8 col-start-5"
+      class="px-2 text-start mt-4 flex items-center justify-between w-full col-span-9 col-start-4"
     >
       <div class="text-gray-400 font-semibold">Recent Cars</div>
       <button class="text-blue-600 font-semibold">View All</button>
     </div>
-    <div
-      class="w-full mt-4 flex items-center overflow-y-auto gap-x-3 relative lg:ml-4"
-    >
-      <slider-product-card v-for="i in 4" :key="i" />
+    <div class="w-full col-start-4 col-end-13">
+      <div
+        class="mt-4 flex items-center overflow-y-auto gap-x-3 relative lg:ml-14 lg:overflow-visible w-11/12"
+      >
+        <slider-product-card v-for="i in 3" :key="i" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import sliderProductCard from "../components/sliderproductcard.vue";
+import filterBar from "@/components/filterbar.vue";
 export default {
   name: "singleCar",
   components: {
     sliderProductCard,
+    filterBar,
   },
 };
 </script>
