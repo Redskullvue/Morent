@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex items-center">
     <!-- Product Card -->
-    <div class="bg-white w-64 p-4 rounded-lg md:w-11/12">
+    <div class="bg-white w-64 p-4 rounded-lg md:w-full">
       <!-- Product Card Header -->
       <div class="flex items-center justify-between">
         <h2 class="font-semibold">KoenigSegg</h2>
@@ -9,9 +9,9 @@
       </div>
       <div><h4 class="text-gray-500">Sport</h4></div>
       <!-- Car-Image -->
-      <div class="relative mt-4 lg:mt-8">
+      <div class="relative lg:mt-12">
         <img
-          class="w-48 h-18 ml-4 lg:ml-10"
+          class="w-48 h-18 lg:ml-14"
           src="../assets/images/koenigsegg.png"
           alt="Car Image"
         />
@@ -39,10 +39,11 @@
       <!-- Price And Rent Button -->
       <div class="flex items-center justify-between mt-2 lg:mt-8">
         <h2 class="font-bold text-black">
-          $99.00 / <span class="font-semibold text-gray-500 font-sm">day</span>
+          $99.00 / <span class="font-semibold text-gray-500 font-sm">Day</span>
         </h2>
         <button
           class="bg-blue-600 hover:bg-blue-700 rounded-md py-2 px-4 text-white"
+          @click="goTo"
         >
           Rent Now !
         </button>
@@ -60,6 +61,14 @@ export default {
     iHeart,
     iClutch,
     iUser,
+  },
+  methods: {
+    goTo() {
+      this.$router.push({
+        name: "singleCar",
+        params: { data: "KoenigSegg" },
+      });
+    },
   },
 };
 </script>
