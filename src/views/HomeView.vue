@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-12 md:grid-rows-[370px_minmax(250px,_1fr)] m-4 p-2 md:gap-y-10 overflow-hidden"
+    class="grid grid-cols-12 md:grid-rows-[360px_minmax(250px,_1fr)] m-4 p-2 md:gap-y-10 overflow-hidden"
   >
     <div class="col-span-12">
       <y-adds add1="Ad1" add2="Ad2" />
@@ -14,9 +14,7 @@
       <h2 class="text-md font-semibold text-gray-400">Popular Cars</h2>
       <button class="text-md font-semibold text-blue-500">View All</button>
     </div>
-    <div
-      class="col-span-12 flex items-center overflow-y-auto gap-x-3 relative lg:ml-4"
-    >
+    <div class="col-span-12 flex items-center overflow-y-auto gap-x-6 relative">
       <slider-product-card v-for="i in 4" :key="i" />
     </div>
     <div class="col-span-12 mt-4 text-md text-gray-400 font-semibold">
@@ -29,11 +27,13 @@
         <mobile-product-card />
       </div>
     </div>
-    <div class="col-span-12 mt-4 flex justify-center mb-4">
+    <div class="col-span-12 mt-8 flex justify-center mb-4">
       <button
-        class="bg-blue-600 rounded-md py-2 px-4 text-white hover:bg-blue-700"
+        class="bg-blue-600 w-28 rounded-md py-2 px-4 text-white hover:bg-blue-700"
+        @click="showMore"
       >
-        Show More Cars
+        <p v-if="!showMoreCars">More Cars</p>
+        <y-loading v-if="showMoreCars" />
       </button>
     </div>
   </div>
@@ -45,6 +45,7 @@ import yAdds from "@/components/ads.vue";
 import pickDropInfo from "@/components/pickDropInfo.vue";
 import sliderProductCard from "@/components/sliderproductcard.vue";
 import mobileProductCard from "@/components/mobileproductcard.vue";
+import yLoading from "@/components/loading.vue";
 export default {
   name: "HomeView",
   components: {
@@ -52,6 +53,20 @@ export default {
     pickDropInfo,
     sliderProductCard,
     mobileProductCard,
+    yLoading,
+  },
+  data() {
+    return {
+      showMoreCars: false,
+    };
+  },
+  methods: {
+    showMore() {
+      this.showMoreCars = true;
+      setTimeout(() => {
+        this.showMoreCars = false;
+      }, 5000);
+    },
   },
 };
 </script>

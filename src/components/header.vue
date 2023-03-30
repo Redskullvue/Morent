@@ -3,7 +3,9 @@
     <!-- MobileHeader Logo And Profile -->
     <div class="flex items-center justify-between p-2 mb-4">
       <div class="flex items-center flex-auto">
-        <h1 class="text-blue-500 font-bold text-3xl">Morent</h1>
+        <router-link to="/"
+          ><h1 class="text-blue-500 font-bold text-3xl">Morent</h1></router-link
+        >
         <search-bar class="md:block px-2 hidden mx-10 w-1/2" />
       </div>
       <div class="flex items-center gap-x-5">
@@ -25,13 +27,13 @@
           <i-setting />
         </div>
         <!-- Profile Image -->
-        <div>
+        <router-link to="/profile" class="cursor-pointer">
           <img
             class="w-8 h-8 rounded-full md:w-10 md:h-10"
             src="../assets/images/Profile.png"
             alt="profile"
           />
-        </div>
+        </router-link>
       </div>
 
       <!-- Search Bar and Filtering -->
