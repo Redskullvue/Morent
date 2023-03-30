@@ -86,7 +86,7 @@
         <span class="bg-blue-600 ml-4 rounded-lg text-white px-3 py-1">13</span>
       </h1>
       <!-- Review PRofile -->
-      <div v-for="i in 5" :key="i">
+      <div v-for="i in 13" :key="i">
         <div class="mt-6 flex items-start justify-between">
           <div class="flex items-center">
             <img
