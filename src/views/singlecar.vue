@@ -132,6 +132,13 @@ export default {
     sliderProductCard,
     filterBar,
   },
+  methods: {
+    goTo() {
+      this.$router.push({
+        name: "rentView",
+      });
+    },
+  },
 };
 </script>
 
