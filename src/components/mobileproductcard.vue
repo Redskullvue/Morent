@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white rounded-md p-4">
+  <div class="w-full bg-white rounded-lg p-4">
     <!-- Product Card Header -->
     <div class="flex items-center justify-between">
       <h2 class="font-semibold">KoenigSegg</h2>
