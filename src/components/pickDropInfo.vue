@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row items-center md:items-center md:justify-between gap-x-4 gap-y-2 relative mt-10"
+    class="flex flex-col md:flex-row items-center md:justify-between gap-x-4 gap-y-2 relative mt-10"
   >
     <div class="bg-white flex-auto p-4 shadow-lg w-full rounded-xl">
       <h3 class="text-slate-800 font-bold mb-2">Pick-up</h3>
@@ -13,15 +13,11 @@
         </div>
         <div>
           <h4 class="px-1">Date</h4>
-          <select class="form-select border-0">
-            <option>20/June/2023</option>
-          </select>
+          <input type="date" class="outline-none" />
         </div>
         <div>
           <h4 class="px-1">Time</h4>
-          <select class="form-select border-0">
-            <option>19:00</option>
-          </select>
+          <input type="time" class="outline-none" />
         </div>
       </div>
     </div>

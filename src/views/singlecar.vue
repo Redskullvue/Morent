@@ -3,9 +3,7 @@
     class="flex items-center p-2 justify-center flex-col lg:grid grid-cols-12 lg:grid-rows-[410px_minmax(250px,_1fr)] gap-x-4 gap-y-4"
   >
     <!-- Sider Bar Filter -->
-    <div
-      class="col-span-3 hidden bg-white row-span-full rounded-2xl lg:block sticky top-0"
-    >
+    <div class="col-span-3 hidden bg-white row-span-full lg:block sticky top-0">
       <filter-bar />
     </div>
     <div class="p-4 flex-col flex lg:col-span-5">
@@ -115,7 +113,7 @@
     </div>
     <div class="w-full col-start-4 col-end-13">
       <div
-        class="mt-4 flex items-center overflow-y-auto gap-x-3 relative lg:ml-14 lg:overflow-visible w-11/12"
+        class="mt-4 flex items-center overflow-y-auto gap-x-6 relative lg:ml-14 lg:overflow-visible"
       >
         <slider-product-card v-for="i in 3" :key="i" />
       </div>

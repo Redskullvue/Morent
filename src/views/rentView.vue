@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col justify-center grid-cols-12 md:grid">
     <!-- 2Divs one for Rent Summary the oth er for the form -->
-    <div class="bg-white px-4 py-4 mx-4 rounded-lg">
+    <div
+      class="bg-white px-4 py-4 mx-4 rounded-lg col-start-9 col-end-13 row-start-1 md:mt-6"
+    >
       <div class="flex flex-col justify-center">
         <h2 class="font-bold text-md mb-2">Rental Summary</h2>
         <h4 class="text-sm text-gray-500">
@@ -37,7 +39,7 @@
       >
         <input
           type="text"
-          class="bg-gray-200 text-sm"
+          class="bg-gray-200 text-sm outline-none"
           placeholder="Apply Promo Code"
         />
         <button class="font-bold text-sm">Apply Now</button>
@@ -56,7 +58,7 @@
     </div>
     <!-- The Form -->
     <div
-      class="bg-white flex flex-col justify-center mt-6 px-4 py-4 mx-4 rounded-lg"
+      class="bg-white flex flex-col justify-center mt-6 px-4 py-4 mx-4 rounded-lg col-start-1 col-end-9 row-start-1"
     >
       <div class="flex items-center justify-between">
         <h2 class="font-bold text-md">Billing Info</h2>
@@ -93,7 +95,7 @@
       </form>
     </div>
     <div
-      class="bg-white flex flex-col justify-center mt-6 px-4 py-4 mx-4 rounded-lg"
+      class="bg-white flex flex-col justify-center mt-6 px-4 py-4 mx-4 rounded-lg col-start-1 col-end-9"
     >
       <div class="flex items-center justify-between">
         <h2 class="font-bold text-md">Rental Info</h2>
@@ -134,7 +136,7 @@
       </form>
     </div>
     <!-- Payment MEthod Section -->
-    <div class="bg-white px-4 py-4 mx-4 rounded-lg mt-6">
+    <div class="bg-white px-4 py-4 mx-4 rounded-lg mt-6 col-start-1 col-end-9">
       <div class="flex items-center justify-between">
         <h2 class="font-bold text-md">Payment Method</h2>
         <h4 class="text-sm text-gray-400">Step 3 of 4</h4>
@@ -177,7 +179,7 @@
         />
       </form>
     </div>
-    <div class="bg-white px-4 py-4 mx-4 rounded-lg mt-6">
+    <div class="bg-white px-4 py-4 mx-4 rounded-lg mt-6 col-start-1 col-end-9">
       <div class="flex items-center justify-between">
         <h2 class="font-bold text-md">Confirmation</h2>
         <h4 class="text-sm text-gray-400">Step 4 of 4</h4>
