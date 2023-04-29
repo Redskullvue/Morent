@@ -12,7 +12,11 @@
       class="flex items-center justify-between mb-4 col-span-12 mt-10 md:mt-0"
     >
       <h2 class="text-md font-semibold text-gray-400">Popular Cars</h2>
-      <button class="text-md font-semibold text-blue-500">View All</button>
+      <router-link to="/all"
+        ><button class="text-md font-semibold text-blue-500">
+          View All
+        </button></router-link
+      >
     </div>
     <div class="col-span-12 flex items-center overflow-y-auto gap-x-6 relative">
       <slider-product-card v-for="i in 4" :key="i" />
@@ -23,8 +27,17 @@
     <div
       class="col-span-12 flex flex-col gap-x-6 gap-y-6 md:flex-row flex-wrap"
     >
-      <div v-for="i in 8" :key="i" class="mt-4 flex-auto">
-        <mobile-product-card />
+      <div
+        v-for="(car, index) in carsData"
+        :key="carsData[car]"
+        class="mt-4 flex-auto"
+      >
+        <mobile-product-card
+          v-if="index <= showList"
+          :Brand="car.Make_Name"
+          :Model="car.Model_Name"
+          :Price="car.Model_ID"
+        />
       </div>
     </div>
     <div class="col-span-12 mt-8 flex justify-center mb-4">
@@ -46,6 +59,7 @@ import pickDropInfo from "@/components/pickDropInfo.vue";
 import sliderProductCard from "@/components/sliderproductcard.vue";
 import mobileProductCard from "@/components/mobileproductcard.vue";
 import yLoading from "@/components/loading.vue";
+import axios from "axios";
 export default {
   name: "HomeView",
   components: {
@@ -55,17 +69,32 @@ export default {
     mobileProductCard,
     yLoading,
   },
+  mounted() {
+    axios
+      .get(
+        "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/BMW?format=json&"
+      )
+      .then((res) => {
+        console.log(res);
+        this.carsData = res.data.Results;
+      });
+  },
   data() {
     return {
       showMoreCars: false,
+      carsData: [],
+      showList: 8,
     };
   },
   methods: {
     showMore() {
       this.showMoreCars = true;
       setTimeout(() => {
+        this.showList = this.showList + 10;
+      }, 2000);
+      setTimeout(() => {
         this.showMoreCars = false;
-      }, 5000);
+      }, 2000);
     },
   },
 };
