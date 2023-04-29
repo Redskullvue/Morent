@@ -1,11 +1,13 @@
 <template>
-  <div class="w-full bg-white rounded-lg p-4">
+  <div v-if="Brand" class="bg-white rounded-lg p-4">
     <!-- Product Card Header -->
     <div class="flex items-center justify-between">
-      <h2 class="font-semibold">KoenigSegg</h2>
+      <h2 class="font-semibold">{{ Brand }}</h2>
       <h2><i-heart class="text-red-500" /></h2>
     </div>
-    <div><h4 class="text-gray-500">Sport</h4></div>
+    <div>
+      <h4 class="text-gray-500">{{ Model }}</h4>
+    </div>
     <!-- Car-Image -->
     <div class="flex items-center justify-between">
       <div class="relative mt-4 lg:mt-8 flex items-center justify-center">
@@ -37,7 +39,8 @@
     </div>
     <div class="flex items-center justify-between mt-2 lg:mt-8">
       <h2 class="font-bold text-black">
-        $99.00 / <span class="font-semibold text-gray-500 font-sm">day</span>
+        ${{ Price }} /
+        <span class="font-semibold text-gray-500 font-sm">day</span>
       </h2>
       <button
         class="bg-blue-600 rounded-md py-2 px-4 text-white hover:bg-blue-700"
@@ -53,6 +56,7 @@
 import { iHeart, iClutch, iUser } from "./icons/index";
 export default {
   name: "mobileProductCard",
+  props: ["Brand", "Model", "Price"],
   components: {
     iHeart,
     iClutch,
