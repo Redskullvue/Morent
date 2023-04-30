@@ -24,7 +24,7 @@
     <div class="col-span-12 mt-4 text-md text-gray-400 font-semibold">
       <h2>Recomendation Car</h2>
     </div>
-    <div class="col-span-12 gap-x-6 gap-y-6 md:flex-row md:flex">
+    <div class="col-span-12 gap-x-6 gap-y-6 md:flex-row md:flex flex-wrap">
       <div
         v-for="(car, index) in carsData"
         :key="carsData[car]"
